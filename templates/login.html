@@ -10,10 +10,16 @@
         <!-- This is where our form will go. -->
 			<form method="POST" action="{{ url_for('login') }}">
 				<p>
-					{{ form.email.label }} {{ form.email(size=30) }}
-					{{ form.password.label }} {{ form.password(size=30) }}
-					<input type="submit" value="Log In">
+					{{ form.date.label }}
 				</p>
+				<p>
+					{{ form.email.label }} <br> {{ form.email(size=30) }} <br>
+					{{ form.password.label }} <br> {{ form.password(size=30) }}
+				</p>
+				<p>
+					{{ form.accept_terms(size=30) }} {{ form.accept_terms.label }}
+				</p>
+				{{ form.submit }}
 			</form>
         </div>
 	</body>
