@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, redirect
 from forms import LoginForm
+from flask_bootstrap import Bootstrap
 # See https://wtforms.readthedocs.io/en/3.0.x/crash_course/
 """ Command to check verion of Flask (from CLI) and WTForms respectively: 
     flask --version 
@@ -9,6 +10,7 @@ from forms import LoginForm
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = '84da5b8a39a6d06bf8bc7a60cedcac93'
+Bootstrap(app)
 
 
 @app.route("/")
