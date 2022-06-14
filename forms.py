@@ -4,7 +4,7 @@ from flask_wtf import FlaskForm
 # pip3 install flask flask-wtf
 # just open terminal and run from project directory.
 from wtforms import StringField, PasswordField, SubmitField
-from wtforms.validators import DataRequired
+from wtforms.validators import DataRequired, Email, Length
 """
     Install email_validator with the following command:
     pip3 install email_validator 
@@ -14,9 +14,13 @@ from wtforms.validators import DataRequired
 class LoginForm(FlaskForm):
     # Add validators
     email = StringField(label="Email",
-                        validators=[DataRequired()]
+                        validators=[
+                            Email('Enter a valid email address'),
+                            DataRequired()]
                         )
     password = PasswordField(label="Password",
-                             validators=[DataRequired()]
+                             validators=[
+                                 Length(8),
+                                 DataRequired()]
                              )
     submit = SubmitField(label='Log In')
